@@ -1,6 +1,6 @@
 # Workspace System Git
 
-This repository is the shareable version of the AI workspace system I use to run multi-CLI work across projects.
+This repository is the shareable version of the AI workspace system I use to run multi-CLI work across projects with Codex CLI, Gemini CLI, and Claude Code.
 
 It captures the rules, routing model, submission/logging tooling, and selected business agent definitions that make the system work, while removing local secrets, machine-specific paths, runtime state, and private working content.
 
@@ -41,12 +41,12 @@ If you are new to the system, start here:
 At a high level, the system works like this:
 
 - shared standards define how work should look
-- routing rules decide which CLI handles which kind of task
+- routing rules decide whether Codex CLI, Gemini CLI, or Claude Code should handle a given task
 - local broker tooling handles delegation, queueing, and health checks
 - session submission tooling logs work into the archive and external systems
 - project-level agent files specialize the system for specific businesses or workflows
 
-The intent is not to force one model to do everything. The structure is built around role separation, predictable routing, and a documented workflow layer that can survive across projects.
+The intent is not to force one model to do everything. Codex acts as the main implementation and integration hub, Gemini is used for research and Google-stack work, and Claude is used for review, refactor, hardening, and presentation-heavy specialist work. The structure is built around role separation, predictable routing, and a documented workflow layer that can survive across projects.
 
 ## Important usage notes
 
@@ -62,7 +62,7 @@ I wanted a clean public-facing copy of the system itself, separate from the live
 That means this repo is meant to show:
 
 - how the operating rules are structured
-- how multi-provider routing is handled
+- how Codex, Gemini, and Claude are routed into different roles
 - how logging and submission are wired into the workflow
 - how project-specific agent definitions sit on top of the shared system
 
