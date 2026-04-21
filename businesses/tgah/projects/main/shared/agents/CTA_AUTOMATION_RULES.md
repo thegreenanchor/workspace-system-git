@@ -63,7 +63,7 @@ If content requires a higher-tier CTA â†’ escalate via Flywheel Coordinator
 Must include a bridge pointing to BLUE when system/process language appears.
 
 Examples:
-- â€œWant the system behind this?â€
+- â€œWant the system behind thisxâ€
 - â€œSee the workflow I useâ€
 
 ### Forbidden CTAs
@@ -98,7 +98,7 @@ If content includes:
 Must include GREEN bridge when authority signals appear.
 
 Examples:
-- â€œWant this built for you?â€
+- â€œWant this built for youxâ€
 - â€œGet the full system auditâ€
 
 ### Forbidden CTAs
@@ -132,7 +132,7 @@ If content includes:
 May include BLUE educational assets if user intent is DIY.
 
 Examples:
-- â€œWant to build it yourself first?â€
+- â€œWant to build it yourself firstxâ€
 - â€œGrab the template versionâ€
 
 ### Approval Required

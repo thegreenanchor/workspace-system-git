@@ -109,7 +109,7 @@ When coordinating, ensure consistent messaging, data points, and brand voice acr
 - Reference templates in `templates/` for standardized deliverables
 - Score blog, social campaign, research, and general writing outputs using the mapped scoring models in `templates/Scoring Model Map.md`; save completed scorecards in `reports/content-quality-scores/`
 - Append this qualifier to all task requests by default:
-  "Now, think deeply about this task and use an internal quality rubric: What does world-class output look like for this task? Then critique your output against that standard and provide an improved version that meets that higher bar."
+  "Now, think deeply about this task and use an internal quality rubric: What does world-class output look like for this taskx Then critique your output against that standard and provide an improved version that meets that higher bar."
 - Store performance data and analytics in `reports/`
 - Keep brand assets organized in `assets/`
 

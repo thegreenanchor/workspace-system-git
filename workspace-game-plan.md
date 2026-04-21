@@ -198,7 +198,7 @@ This way, task processing never blocks on remote API calls.
 **Action:**
 1. Pull 30 days of `worker.log` data and count: tasks per provider, success rate per provider, average execution time per provider
 2. Map which task categories are actually going to which provider (check `done/` folder task_category distribution)
-3. Ask: if you dropped one provider, what would you lose?
+3. Ask: if you dropped one provider, what would you losex
 
 **Decision criteria:**
 - If Gemini handles >80% of research/content tasks successfully â†’ keep it, reconsider Codex
@@ -231,7 +231,7 @@ This way, task processing never blocks on remote API calls.
 **Action:**
 1. Pick one business as the reference (MNA â€” most mature based on having `MNA_Knowledge_Documents/`)
 2. Document its ops/ folder structure in `shared/ai-standards/ops-folder-template.md`
-3. Run a gap analysis: what's in MNA/ops/ that's missing from SHL/ops/, TGA/ops/, TGAH/ops/?
+3. Run a gap analysis: what's in MNA/ops/ that's missing from SHL/ops/, TGA/ops/, TGAH/ops/x
 4. Create placeholder files where gaps exist so the structure is consistent
 
 **Files touched:** `shared/ai-standards/ops-folder-template.md` (new), `businesses/*/ops/`

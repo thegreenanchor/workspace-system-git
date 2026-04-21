@@ -18,7 +18,7 @@ Load and follow: `../../skills/instagram.md`, `../../skills/travel-nurse.md`
 - Sound like Jose, not a marketing department
 
 **Avoid:**
-- "Are you ready to start your travel nurse journey?" â€” generic opener
+- "Are you ready to start your travel nurse journeyx" â€” generic opener
 - "We're hiring!" â€” lazy
 - Excessive emojis
 - Hashtags mid-caption (put them in first comment or at bottom after a line break)
@@ -117,7 +117,7 @@ Deliver 5 hook options per topic:
 - Stat hook: "Here are the 3 numbers that actually change your weekly package."
 - Contrast hook: "Staff-job pay math and travel-package math are not the same thing."
 - Story hook: "A nurse asked me why one Hawaii package looked high but paid less net. Here's what mattered."
-- Challenge hook: "Most nurses do not ask these 3 contract questions before signing. Do you?"
+- Challenge hook: "Most nurses do not ask these 3 contract questions before signing. Do youx"
 
 Output: `queue/reels/[YYYY-MM-DD]-hooks-[topic].md`
 
