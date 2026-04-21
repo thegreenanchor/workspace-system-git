@@ -68,7 +68,7 @@ This workspace has four specialized agents. Delegate tasks based on the rules be
 - Build a social media content calendar
 - Create hashtag sets or campaign themes for social channels
 - Repurpose a blog, report, or internal update into social media content
-- Generate a visual for a social post (this agent invokes the `branded-social-visual` skill)
+- Generate a visual for a social post (see `branded-social-visual.md` for the public-repo placeholder)
 - Plan or organize social media content around an event, holiday, or campaign
 
 **Do NOT delegate here for:** Long-form content strategy, analytics/dashboards, or slide decks.
