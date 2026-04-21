@@ -11,7 +11,7 @@
 *.html text eol=lf
 *.svg text eol=lf
 *.env.example text eol=lf
-*.skill text eol=lf
+*.skill binary
 
 *.cmd text eol=crlf
 *.bat text eol=crlf
