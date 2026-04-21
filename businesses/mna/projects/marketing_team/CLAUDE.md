@@ -35,15 +35,15 @@ This workspace supports an AI marketing team for MNA Healthcare, a healthcare st
 
 ```
 marketing_team/
-â”œâ”€â”€ clients/           # Client-specific folders and projects
-â”œâ”€â”€ content/           # Blog posts, articles, and content assets
-â”œâ”€â”€ strategies/        # Content strategies and marketing plans
-â”œâ”€â”€ research/          # Market research and data analysis
-â”œâ”€â”€ social-media/      # Social media content and calendars
-â”œâ”€â”€ email-campaigns/   # Email marketing materials
-â”œâ”€â”€ reports/           # Performance reports and analytics
-â”œâ”€â”€ templates/         # Reusable templates for deliverables
-â””â”€â”€ assets/            # Brand assets, images, and media
+â"œâ"€â"€ clients/           # Client-specific folders and projects
+â"œâ"€â"€ content/           # Blog posts, articles, and content assets
+â"œâ"€â"€ strategies/        # Content strategies and marketing plans
+â"œâ"€â"€ research/          # Market research and data analysis
+â"œâ"€â"€ social-media/      # Social media content and calendars
+â"œâ"€â"€ email-campaigns/   # Email marketing materials
+â"œâ"€â"€ reports/           # Performance reports and analytics
+â"œâ"€â"€ templates/         # Reusable templates for deliverables
+â""â"€â"€ assets/            # Brand assets, images, and media
 ../../../../shared/scoring-models/     # Shared quality and risk scoring models
 ```
 

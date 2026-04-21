@@ -5,14 +5,14 @@
 
 ---
 
-## PHASE 1 â€” Harden (Weeks 1â€“2)
+## PHASE 1 - Harden (Weeks 1-2)
 *Fix what's already breaking. No structural changes.*
 
 ---
 
 ### 1. Add retry logic to the submission pipeline
 
-**Problem:** `submit_session.py` makes 3 synchronous calls (Notion, Google Docs, SQLite) in sequence. If any step fails mid-chain, you get `completed-with-log-error` â€” a zombie state where the task succeeded but the log is incomplete. Already showing in `worker.log`.
+**Problem:** `submit_session.py` makes 3 synchronous calls (Notion, Google Docs, SQLite) in sequence. If any step fails mid-chain, you get `completed-with-log-error` - a zombie state where the task succeeded but the log is incomplete. Already showing in `worker.log`.
 
 **Fix:**
 
@@ -37,7 +37,7 @@ Add a fallback queue: if all retries fail, append the payload path to `cli_broke
 
 ### 2. Separate task state from log sync state
 
-**Problem:** `BrokerResult.status` conflates two things: did the task succeed, and did the log submission succeed. This is why "completed-with-log-error" exists as a status â€” it's load-bearing instead of exceptional.
+**Problem:** `BrokerResult.status` conflates two things: did the task succeed, and did the log submission succeed. This is why "completed-with-log-error" exists as a status - it's load-bearing instead of exceptional.
 
 **Fix:**
 
@@ -47,7 +47,7 @@ Add a second field to `BrokerResult`:
 @dataclass
 class BrokerResult:
     ...
-    status: str              # "completed" | "failed" â€” task execution only
+    status: str              # "completed" | "failed" - task execution only
     logging_status: str      # "submitted" | "partial" | "pending" | "failed"
 ```
 
@@ -78,7 +78,7 @@ def validate_markers(content: str, rule_name: str) -> bool:
 # Run before any write:
 for rule_name in rule_blocks:
     if not validate_markers(existing_content, rule_name):
-        log.warning(f"Marker mismatch for {rule_name} in {filepath} â€” skipping")
+        log.warning(f"Marker mismatch for {rule_name} in {filepath} - skipping")
         continue
 ```
 
@@ -112,7 +112,7 @@ if is_auth_error(result.stderr):
     fire_n8n_alert(provider_id, task_id, result.stderr)
 ```
 
-Point `fire_n8n_alert()` at your existing n8n webhook â†’ Slack. Include: provider name, task ID, timestamp, first line of stderr.
+Point `fire_n8n_alert()` at your existing n8n webhook -> Slack. Include: provider name, task ID, timestamp, first line of stderr.
 
 **Files touched:** `cli_broker_worker.py`, `common.py` (add webhook helper)
 **Outcome:** Auth failures surface in Slack within minutes, not hours.
@@ -158,7 +158,7 @@ If any errors, log them all and exit before processing inbox. Don't silently deg
 
 ### 6. Map the full submission pipeline (prerequisite for Phase 2)
 
-**Action:** Before simplifying anything, document the exact call chain from `cli_broker_worker.py` through `submit_session.py` â†’ `archive.py` â†’ Notion â†’ Google Docs â†’ SQLite. Write it as a flowchart in `ai_rules/SUBMISSION_PIPELINE.md`.
+**Action:** Before simplifying anything, document the exact call chain from `cli_broker_worker.py` through `submit_session.py` -> `archive.py` -> Notion -> Google Docs -> SQLite. Write it as a flowchart in `ai_rules/SUBMISSION_PIPELINE.md`.
 
 Note: which steps are blocking vs. async, what the failure mode is for each hop, and what partial state looks like. This becomes the source of truth for Phase 2 consolidation.
 
@@ -167,7 +167,7 @@ Note: which steps are blocking vs. async, what the failure mode is for each hop,
 
 ---
 
-## PHASE 2 â€” Simplify (Weeks 3â€“4)
+## PHASE 2 - Simplify (Weeks 3-4)
 *Reduce surface area. Consolidate where duplication creates risk.*
 
 ---
@@ -179,7 +179,7 @@ Note: which steps are blocking vs. async, what the failure mode is for each hop,
 **Fix:**
 
 Refactor the submission flow:
-1. Task completes â†’ write to SQLite immediately (synchronous, local, fast)
+1. Task completes -> write to SQLite immediately (synchronous, local, fast)
 2. Mark `logging_status = "pending_remote"`
 3. Enqueue Notion + Google Docs writes to a background queue (simple JSONL file or in-memory queue with a separate thread)
 4. Background sync thread processes the queue and updates `logging_status` to `submitted` when done
@@ -201,8 +201,8 @@ This way, task processing never blocks on remote API calls.
 3. Ask: if you dropped one provider, what would you losex
 
 **Decision criteria:**
-- If Gemini handles >80% of research/content tasks successfully â†’ keep it, reconsider Codex
-- If Claude review tasks are <5% of volume â†’ route those to Gemini or Codex instead
+- If Gemini handles >80% of research/content tasks successfully -> keep it, reconsider Codex
+- If Claude review tasks are <5% of volume -> route those to Gemini or Codex instead
 - Keep whichever 2 providers cover 95%+ of actual task volume
 
 **Files touched:** `global_cli_policy.yaml` (routing changes), `config.yaml` (remove decommissioned provider)
@@ -215,9 +215,9 @@ This way, task processing never blocks on remote API calls.
 **Problem:** 83+ extensions means 83+ potential maintenance surfaces. Many are likely installed but dormant.
 
 **Action:**
-1. Check `openclaw/extensions/` â€” look for any usage logs, last-modified dates, or import references in `src/`
+1. Check `openclaw/extensions/` - look for any usage logs, last-modified dates, or import references in `src/`
 2. Build `openclaw/SKILLS_MANIFEST.md`: list every extension with status (active / dormant / unknown), last known use date, and which business uses it
-3. Archive dormant extensions to `openclaw/extensions/_archive/` â€” don't delete, just move
+3. Archive dormant extensions to `openclaw/extensions/_archive/` - don't delete, just move
 
 **Files touched:** `openclaw/extensions/`, new `openclaw/SKILLS_MANIFEST.md`
 **Outcome:** Clear picture of what's live vs. dead weight. Easier onboarding for future collaborators.
@@ -229,7 +229,7 @@ This way, task processing never blocks on remote API calls.
 **Problem:** MNA, SHL, TGA, TGAH all have parallel folder structures (ops/, assets/, projects/, archive/) but likely divergent contents and no shared template.
 
 **Action:**
-1. Pick one business as the reference (MNA â€” most mature based on having `MNA_Knowledge_Documents/`)
+1. Pick one business as the reference (MNA - most mature based on having `MNA_Knowledge_Documents/`)
 2. Document its ops/ folder structure in `shared/ai-standards/ops-folder-template.md`
 3. Run a gap analysis: what's in MNA/ops/ that's missing from SHL/ops/, TGA/ops/, TGAH/ops/x
 4. Create placeholder files where gaps exist so the structure is consistent
@@ -265,7 +265,7 @@ Update `sync_rules.py` to read `status` and skip injection of `deprecated` block
 
 ---
 
-## PHASE 3 â€” Expand (Month 2+)
+## PHASE 3 - Expand (Month 2+)
 *Build on the hardened, simplified foundation.*
 
 ---
@@ -273,7 +273,7 @@ Update `sync_rules.py` to read `status` and skip injection of `deprecated` block
 ### 12. Observability dashboard
 
 Once SQLite is canonical (item 7), build a simple dashboard:
-- n8n workflow: poll `session_log.db` every hour â†’ format summary â†’ post to Slack
+- n8n workflow: poll `session_log.db` every hour -> format summary -> post to Slack
 - Metrics: tasks completed today, tasks failed, logging_status breakdown, provider distribution
 - Alert thresholds: >3 failures in an hour, any provider with 0 completions in 24h
 
@@ -304,7 +304,7 @@ Once SQLite is canonical (item 7), build a simple dashboard:
 
 **Action:**
 - Add an `osint-toolkit/integrations/` folder with one script per use case
-- Wire outputs (reports/) into the ai_rules broker as context files for research tasks â€” so Gemini can act on OSINT data automatically
+- Wire outputs (reports/) into the ai_rules broker as context files for research tasks - so Gemini can act on OSINT data automatically
 
 **Files touched:** `osint-toolkit/integrations/` (new), `ai_rules/instruction_templates/` (add OSINT context injection)
 
@@ -315,7 +315,7 @@ Once SQLite is canonical (item 7), build a simple dashboard:
 **Goal:** Move openclaw from a dev repo to a deployed system with CI checks.
 
 **Action:**
-1. Audit `openclaw/skills/` â€” document which skills are production-ready vs. prototype
+1. Audit `openclaw/skills/` - document which skills are production-ready vs. prototype
 2. Add a `skills/MANIFEST.yaml` with skill status, dependencies, and platform targets
 3. Set up GitHub Actions (`.github/workflows/` already exists) to run skill validation on PR
 4. Define "deployed" vs. "local-only" skill states
@@ -333,11 +333,11 @@ Once SQLite is canonical (item 7), build a simple dashboard:
 - [ ] `SUBMISSION_PIPELINE.md` written and accurate
 
 **Before starting Phase 3:**
-- [ ] SQLite is canonical â€” Notion/GDocs are async
+- [ ] SQLite is canonical - Notion/GDocs are async
 - [ ] Provider count is 2 (one decommissioned)
 - [ ] All 4 business ops/ folders follow shared template
 - [ ] All rule blocks have status frontmatter
 
 ---
 
-*Items marked [VERIFY] require a file read before implementing â€” file names and function names are based on prior analysis and should be confirmed against current state.*
+*Items marked [VERIFY] require a file read before implementing - file names and function names are based on prior analysis and should be confirmed against current state.*

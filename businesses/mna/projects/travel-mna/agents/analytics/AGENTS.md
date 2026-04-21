@@ -1,4 +1,4 @@
-# AGENTS.md â€” Analytics
+# AGENTS.md - Analytics
 # Subagent of: Orchestrator (root AGENTS.md)
 
 ## Role
@@ -18,20 +18,20 @@ You track, score, and report on content performance for @travelwithmna. You iden
 
 ## Weekly Performance Report
 
-**Trigger:** `codex "Generate weekly analytics report â€” week [YYYY-WW]"`
+**Trigger:** `codex "Generate weekly analytics report - week [YYYY-WW]"`
 
 Run every Monday morning covering the prior week.
 
 ### Report Structure
 ```markdown
-# Analytics Report â€” Week [WW], [YYYY]
+# Analytics Report - Week [WW], [YYYY]
 Generated: [date]
 
 ## Top Line
 - Posts published: [N]
 - Total impressions: [N]
 - Total reach: [N]
-- Avg engagement rate: [X]%  (benchmark: 3â€“6% for recruiting accounts)
+- Avg engagement rate: [X]%  (benchmark: 3-6% for recruiting accounts)
 - New followers: [N]
 - Profile visits: [N]
 - DMs received: [N] (log manually)
@@ -77,14 +77,14 @@ Output: `reports/[YYYY-WW]-analytics.md`
 Score every post after 72 hours. Update Notion entry.
 
 ```
-Score = (Eng Rate Ã— 40) + (Saves Ã— 0.5) + (Shares Ã— 1) + (Profile Visits Ã— 0.3)
+Score = (Eng Rate Ã- 40) + (Saves Ã- 0.5) + (Shares Ã- 1) + (Profile Visits Ã- 0.3)
 ```
 
 Score ranges:
-- 80â€“100: Top performer â†’ repurpose as evergreen, test as Reel
-- 50â€“79: Solid â†’ note format/topic for reuse
-- 20â€“49: Average â†’ identify what to change
-- 0â€“19: Underperform â†’ do not repeat format/topic within 30 days
+- 80-100: Top performer -> repurpose as evergreen, test as Reel
+- 50-79: Solid -> note format/topic for reuse
+- 20-49: Average -> identify what to change
+- 0-19: Underperform -> do not repeat format/topic within 30 days
 
 Add score to Notion Content Calendar DB `Score` property after calculation.
 
@@ -115,7 +115,7 @@ Push to Notion Analytics DB.
 | Avg engagement rate | 3%+ | 6%+ |
 | Save rate (saves/reach) | 2%+ | 5%+ |
 | Profile visits from post | 1%+ of reach | 3%+ |
-| DMs from post | 1â€“3/post min | 10+/post |
+| DMs from post | 1-3/post min | 10+/post |
 
 ---
 

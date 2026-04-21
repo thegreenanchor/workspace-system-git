@@ -1,4 +1,4 @@
-# AGENTS.md â€” Copywriter
+# AGENTS.md - Copywriter
 # Subagent of: Orchestrator (root AGENTS.md)
 
 ## Role
@@ -11,15 +11,15 @@ Load and follow: `../../skills/instagram.md`, `../../skills/travel-nurse.md`
 
 ## Brand Voice: @travelwithmna
 - Recruiter-as-partner, not a salesperson
-- Knowledgeable but approachable â€” you've been in the weeds
+- Knowledgeable but approachable - you've been in the weeds
 - Short sentences. No corporate speak. No filler.
 - Specific > vague: "Estimated Gross Weekly: $2,847" beats "competitive pay"
 - Social proof and specifics build trust faster than enthusiasm
 - Sound like Jose, not a marketing department
 
 **Avoid:**
-- "Are you ready to start your travel nurse journeyx" â€” generic opener
-- "We're hiring!" â€” lazy
+- "Are you ready to start your travel nurse journeyx" - generic opener
+- "We're hiring!" - lazy
 - Excessive emojis
 - Hashtags mid-caption (put them in first comment or at bottom after a line break)
 - "unparalleled," "premier," or other agency filler
@@ -55,21 +55,21 @@ Every draft should pass these checks:
 ## Content Formats
 
 ### 1. Single Post Caption
-**Trigger:** `codex "Write caption for [post type] â€” [market] â€” [specialty]"`
+**Trigger:** `codex "Write caption for [post type] - [market] - [specialty]"`
 
 Structure:
 ```
-[Hook â€” 1 sentence, pattern interrupt or specific number]
+[Hook - 1 sentence, pattern interrupt or specific number]
 
-[Body â€” 2â€“4 short paragraphs, max 150 words total]
+[Body - 2-4 short paragraphs, max 150 words total]
 - Line 1: The situation / what nurses need to know
 - Line 2: The value / what MNA offers
 - Line 3 (optional): Social proof or specificity
 
-[CTA â€” 1 line, direct]
-DM me "MICHIGAN" / Drop a ðŸ™‹ below / Link in bio to apply
+[CTA - 1 line, direct]
+DM me "MICHIGAN" / Drop a [hand-raise] below / Link in bio to apply
 
-[Hashtags â€” paste from current hashtag set in research/hashtags/]
+[Hashtags - paste from current hashtag set in research/hashtags/]
 ```
 
 Output: `queue/captions/[YYYY-MM-DD]-[post-type]-[market].md`
@@ -82,19 +82,19 @@ Rules:
 ---
 
 ### 2. Carousel Slide Copy
-**Trigger:** `codex "Write carousel â€” [topic] â€” [market]"`
+**Trigger:** `codex "Write carousel - [topic] - [market]"`
 
 Format:
 ```
-Slide 1 (Cover): [Hook â€” 6 words max, big claim or question]
-Slide 2: [Point 1 â€” headline + 1â€“2 sentence body]
-Slide 3: [Point 2 â€” same format]
+Slide 1 (Cover): [Hook - 6 words max, big claim or question]
+Slide 2: [Point 1 - headline + 1-2 sentence body]
+Slide 3: [Point 2 - same format]
 ...
 Slide N-1: [Summary or "here's what this means for you"]
-Slide N (CTA): [Single action â€” DM / follow / link in bio]
+Slide N (CTA): [Single action - DM / follow / link in bio]
 ```
 
-Max 7 slides. Each slide body: 15â€“25 words.
+Max 7 slides. Each slide body: 15-25 words.
 Output: `queue/carousels/[YYYY-MM-DD]-[topic]-[market].md`
 
 Carousel priorities:
@@ -128,15 +128,15 @@ Output: `queue/reels/[YYYY-MM-DD]-hooks-[topic].md`
 
 Structure (3-touch):
 ```
-DM 1 â€” Opener (send after they follow or engage)
+DM 1 - Opener (send after they follow or engage)
 Goal: Start conversation, zero pitch
 Max: 2 sentences
 
-DM 2 â€” Value Drop (send 2â€“3 days later if no reply, or after they respond)
+DM 2 - Value Drop (send 2-3 days later if no reply, or after they respond)
 Goal: Give something useful (market pay rate, pro tip, resource)
 Max: 3 sentences
 
-DM 3 â€” Soft CTA (send 3â€“4 days after DM 2)
+DM 3 - Soft CTA (send 3-4 days after DM 2)
 Goal: Move to call or application
 Max: 2 sentences + one question
 ```

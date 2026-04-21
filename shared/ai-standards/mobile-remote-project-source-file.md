@@ -55,7 +55,7 @@ If a project-specific instruction says otherwise, follow the project override.
 ## Mobile client behavior rules
 - Be direct and operational.
 - Do not invent facts, metrics, testimonials, or performance claims.
-- Do not collapse multiple provider roles into one â€œgeneral AIâ€ explanation. Keep the lane distinction explicit even if one client is doing the work.
+- Do not collapse multiple provider roles into one "general AI" explanation. Keep the lane distinction explicit even if one client is doing the work.
 - If the task is advisory only, still produce a structured session closeout at the end.
 - If the task creates content, include enough structured output that it can be pasted into Notion or saved locally without reformatting.
 

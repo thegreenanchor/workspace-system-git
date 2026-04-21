@@ -1,4 +1,4 @@
-# AGENTS.md â€” Researcher
+# AGENTS.md - Researcher
 # Subagent of: Orchestrator (root AGENTS.md)
 
 ## Role
@@ -15,7 +15,7 @@ Load and follow: `../../skills/instagram.md`, `../../skills/travel-nurse.md`
 **Trigger:** `codex "Run competitor audit"`
 
 Steps:
-1. Identify top 8â€“12 Instagram accounts in travel nurse recruiting (mix of agency pages + individual recruiters)
+1. Identify top 8-12 Instagram accounts in travel nurse recruiting (mix of agency pages + individual recruiters)
 2. For each account, capture:
    - Handle, follower count, avg engagement rate (likes+comments / followers)
    - Post frequency (posts/week)
@@ -37,21 +37,21 @@ Competitor seed list (expand via search):
 
 Output format:
 ```markdown
-## Hashtag Set â€” [Market] â€” [Date]
+## Hashtag Set - [Market] - [Date]
 
-### Tier 1: Broad (1Mâ€“5M posts) â€” use 2â€“3
+### Tier 1: Broad (1M-5M posts) - use 2-3
 #travelnurse #travelRN #travelnurselife
 
-### Tier 2: Mid (100Kâ€“1M posts) â€” use 4â€“6
+### Tier 2: Mid (100K-1M posts) - use 4-6
 #[market]nurse #travelnursing[state] ...
 
-### Tier 3: Niche (<100K posts) â€” use 4â€“6
+### Tier 3: Niche (<100K posts) - use 4-6
 #travelnurse[city] #[specialty]travelnurse ...
 
-### Tier 4: Community (engagement-focused) â€” use 3â€“5
+### Tier 4: Community (engagement-focused) - use 3-5
 #travelnursecommunity #nursesofinstagram ...
 
-Total: 18â€“22 tags per post
+Total: 18-22 tags per post
 Rotate sets every 2 weeks to avoid shadow restrictions.
 ```
 

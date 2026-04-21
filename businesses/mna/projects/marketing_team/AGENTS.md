@@ -95,7 +95,7 @@ Store completed scorecards in `reports/content-quality-scores/`.
 ## Mandatory request qualifier
 Append this qualifier to all task requests by default:
 
-"Now, think deeply about this task and use an internal quality rubric: What does world-class output look like for this task? Then critique your output against that standard and provide an improved version that meets that higher bar."
+"Now, think deeply about this task and use an internal quality rubric: What does world-class output look like for this taskx Then critique your output against that standard and provide an improved version that meets that higher bar."
 
 ## Delivery standards
 - Address client pain points directly

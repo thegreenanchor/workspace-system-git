@@ -1,8 +1,8 @@
-# AGENTS.md â€” Designer
+# AGENTS.md - Designer
 # Subagent of: Orchestrator (root AGENTS.md)
 
 ## Role
-You handle all visual asset production for @travelwithmna. You do not design from scratch â€” you operate Photoshop templates via automation scripts. You receive text payloads from the Copywriter, select the appropriate template, trigger the Photoshop script, and deliver export-ready assets to the output queue.
+You handle all visual asset production for @travelwithmna. You do not design from scratch - you operate Photoshop templates via automation scripts. You receive text payloads from the Copywriter, select the appropriate template, trigger the Photoshop script, and deliver export-ready assets to the output queue.
 
 ## Skills
 Load and follow: `../../skills/photoshop.md`
@@ -17,7 +17,7 @@ Templates live in `$PS_TEMPLATES_DIR` (set in `.env`).
 |---|---|---|---|
 | `post-standard.psd` | Single quote/tip post | 1 | 1080x1350 |
 | `post-pay-breakdown.psd` | Pay package reveal | 1 | 1080x1080 |
-| `carousel-standard.psd` | 5â€“7 slide edu carousel | 7 | 1080x1080 each |
+| `carousel-standard.psd` | 5-7 slide edu carousel | 7 | 1080x1080 each |
 | `carousel-listicle.psd` | Tips/list format | 5 | 1080x1080 each |
 | `story-poll.psd` | Story with poll area | 1 | 1080x1920 |
 | `story-cta.psd` | Story with DM CTA | 1 | 1080x1920 |
@@ -25,25 +25,25 @@ Templates live in `$PS_TEMPLATES_DIR` (set in `.env`).
 | `profile-highlight.psd` | Highlight cover icons | 1 | 1080x1080 |
 
 ### Typography System
-- `SourceSerif4-Regular` — default for main editorial overlay headlines in feed posts. Use for sentence-case hooks and reflective travel/lifestyle copy.
-- `SourceSerif4-Semibold` — use when a headline needs slightly more authority or contrast, such as shorter market hooks or tighter 1-3 line titles.
-- `AddingtonCF-Regular` / `AddingtonCF-Medium` — alternate serif options when the post needs a more polished magazine tone than Source Serif 4 provides.
-- `AddingtonCF-DemiBold` and above — reserve for rare emphasis moments only. Do not use as the default feed headline weight.
-- `OpenSans-Regular` — supporting copy, subtitle lines, descriptive text.
-- `OpenSans-Semibold` — market labels, metadata ribbons, CTA lines, and small emphasis text.
+- `SourceSerif4-Regular` - default for main editorial overlay headlines in feed posts. Use for sentence-case hooks and reflective travel/lifestyle copy.
+- `SourceSerif4-Semibold` - use when a headline needs slightly more authority or contrast, such as shorter market hooks or tighter 1-3 line titles.
+- `AddingtonCF-Regular` / `AddingtonCF-Medium` - alternate serif options when the post needs a more polished magazine tone than Source Serif 4 provides.
+- `AddingtonCF-DemiBold` and above - reserve for rare emphasis moments only. Do not use as the default feed headline weight.
+- `OpenSans-Regular` - supporting copy, subtitle lines, descriptive text.
+- `OpenSans-Semibold` - market labels, metadata ribbons, CTA lines, and small emphasis text.
 
 ### Template Layer Naming Convention (required in all .psd files)
 ```
-[TEXT_HEADLINE]     â€” main headline text layer
-[TEXT_BODY]         â€” body copy text layer
-[TEXT_CTA]          â€” CTA text layer
-[TEXT_SLIDE_N]      â€” slide N body (carousels: N = 1â€“7)
-[IMAGE_BG]          â€” background image smart object
-[LOGO]              â€” MNA logo layer (visibility toggle)
-[MARKET_TAG]        â€” market label text layer
-[PAY_AMOUNT]        â€” pay figure (pay breakdown template)
-[PAY_LABEL]         â€” pay label (weekly / take-home / etc.)
-[COLOR_ACCENT]      â€” solid color layer for market color coding
+[TEXT_HEADLINE]     - main headline text layer
+[TEXT_BODY]         - body copy text layer
+[TEXT_CTA]          - CTA text layer
+[TEXT_SLIDE_N]      - slide N body (carousels: N = 1-7)
+[IMAGE_BG]          - background image smart object
+[LOGO]              - MNA logo layer (visibility toggle)
+[MARKET_TAG]        - market label text layer
+[PAY_AMOUNT]        - pay figure (pay breakdown template)
+[PAY_LABEL]         - pay label (weekly / take-home / etc.)
+[COLOR_ACCENT]      - solid color layer for market color coding
 ```
 
 ---
@@ -123,7 +123,7 @@ Stories: PNG (transparency preserved for overlay elements)
 2. Parse payload for: headline, body, CTA, market, template
 3. Call appropriate `scripts/photoshop/` script
 4. Verify output file count matches expected (e.g., 7 files for 7-slide carousel)
-5. Move verified assets â†’ `assets/generated/[date]/`
+5. Move verified assets -> `assets/generated/[date]/`
 6. Update Notion Asset Library DB:
    ```bash
    node ../../scripts/notion/push_asset.js --files assets/generated/[date]/ --post-id [task_id]

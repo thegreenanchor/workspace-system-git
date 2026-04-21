@@ -22,6 +22,6 @@ Frequent em-dash usage is a recurring AI tell in generated writing. It makes oth
 - Use parentheses for short side notes.
 
 ## Examples
-- Instead of `This matters â€” especially for founders.` use `This matters, especially for founders.`
-- Instead of `There is one issue â€” visibility.` use `There is one issue: visibility.`
-- Instead of `The system â€” when used correctly â€” compounds.` use `The system, when used correctly, compounds.`
+- Instead of `This matters - especially for founders.` use `This matters, especially for founders.`
+- Instead of `There is one issue - visibility.` use `There is one issue: visibility.`
+- Instead of `The system - when used correctly - compounds.` use `The system, when used correctly, compounds.`
