@@ -1,4 +1,5 @@
 # Local runtime and secrets
+.claude/
 **/.env
 **/.env.*
 !**/.env.example

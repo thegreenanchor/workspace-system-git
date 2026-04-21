@@ -12,16 +12,16 @@ sqlite:
   path: "<workspace-root>/ai_rules/session_log.db"
 
 notion:
-  database_id: "013d112591594300b8dfeeb17ba18624"  # Database container for the AI Session Log.
-  data_source_id: "708d2c3b-a131-40e2-99bc-219391feaf14"  # Active data source for the AI Session Log.
+  database_id: "<notion-database-id>"  # Database container for the AI Session Log.
+  data_source_id: "<notion-data-source-id>"  # Active data source for the AI Session Log.
 
 google_docs:
   business_docs:
-    mna: "1pP8iRlO0Lb-3j-gFf_bmFkJ7VV0DuTg0eBjueN13XhI"  # Google Doc ID for MNA session log.
-    tga: "1vMUuwQ-3L4t8XLjkvpTizt1ACvEoZ8Qk1NmubcvvkE8"  # Google Doc ID for TGA session log.
-    tgah: "1udGAsiWsnjayUYyekr6yv5E6XPccqv4Nz9BKW7m7jhI"  # Google Doc ID for TGAH session log.
-    shl: "1A_vu1citkKugL6Q0vh00615pCcVy9_Gf3vS6HiKWkFc"  # Google Doc ID for SHL session log.
-    personal: "10JRKZQcOkGcVukMjWXgCdo4xGAefu9kpLiKLfyxFkUA"  # Google Doc ID for personal session log.
+    mna: "<google-doc-id-mna>"  # Google Doc ID for MNA session log.
+    tga: "<google-doc-id-tga>"  # Google Doc ID for TGA session log.
+    tgah: "<google-doc-id-tgah>"  # Google Doc ID for TGAH session log.
+    shl: "<google-doc-id-shl>"  # Google Doc ID for SHL session log.
+    personal: "<google-doc-id-personal>"  # Google Doc ID for personal session log.
 
 automation:
   codex_sessions_root: "<codex-session-root>"

@@ -9,7 +9,7 @@ Review these pages:
 
 Current project state:
 - Runtime Notion-Version header: 2026-03-11
-- Notion data source ID: 708d2c3b-a131-40e2-99bc-219391feaf14
+- Notion data source ID: <notion-data-source-id>
 - Submit path: create page under data_source_id, then append body blocks
 
 When reviewing:

@@ -1,6 +1,6 @@
 # Social Campaign Output Standard
 
-Source of truth: https://www.notion.so/068e1e45ad194e4cbde112201a65621e
+Source of truth: internal Notion standard (sanitized in this export)
 
 Use this standard for any deliverable that outputs a social media campaign page, campaign calendar, or week-by-week post package intended for Notion, Buffer, and Adobe Firefly workflows.
 
