@@ -1,0 +1,52 @@
+standards:
+  root_dir: "<workspace-root>/shared/ai-standards"
+
+archive:
+  root_dir: "<workspace-root>/archive/session-logs"
+  backup_root_dirs:
+    - "<drive-backup-root>/Archive/shared/session-logs"
+  raw_dir_name: "_raw"
+  normalized_dir_name: "_normalized"
+
+sqlite:
+  path: "<workspace-root>/ai_rules/session_log.db"
+
+notion:
+  database_id: "013d112591594300b8dfeeb17ba18624"  # Database container for the AI Session Log.
+  data_source_id: "708d2c3b-a131-40e2-99bc-219391feaf14"  # Active data source for the AI Session Log.
+
+google_docs:
+  business_docs:
+    mna: "1pP8iRlO0Lb-3j-gFf_bmFkJ7VV0DuTg0eBjueN13XhI"  # Google Doc ID for MNA session log.
+    tga: "1vMUuwQ-3L4t8XLjkvpTizt1ACvEoZ8Qk1NmubcvvkE8"  # Google Doc ID for TGA session log.
+    tgah: "1udGAsiWsnjayUYyekr6yv5E6XPccqv4Nz9BKW7m7jhI"  # Google Doc ID for TGAH session log.
+    shl: "1A_vu1citkKugL6Q0vh00615pCcVy9_Gf3vS6HiKWkFc"  # Google Doc ID for SHL session log.
+    personal: "10JRKZQcOkGcVukMjWXgCdo4xGAefu9kpLiKLfyxFkUA"  # Google Doc ID for personal session log.
+
+automation:
+  codex_sessions_root: "<codex-session-root>"
+  codex_session_index_path: "<user-home>/.codex/session_index.jsonl"
+  state_path: "<workspace-root>/ai_rules/codex_auto_submit_state.json"
+  default_business: "personal"
+  stale_minutes: 10
+  audit_recent_hours: 72
+
+broker:
+  root_dir: "<workspace-root>/ai_rules/cli_broker_runtime"
+  global_policy_path: "<workspace-root>/ai_rules/global_cli_policy.yaml"
+  override_file_name: "AI_ROUTING.yaml"
+  schedule_task_name: "AI CLI Broker"
+  default_origin_assistant_name: "codex"
+  default_origin_client_surface: "codex-cli"
+  wait_worker_bootstrap_seconds: 5
+  processing_stale_minutes: 20
+  provider_timeout_seconds: 900
+  submit_sessions: true
+
+paths:
+  shared_rules_root: "<workspace-root>/shared/ai-standards"
+
+files:
+  required_instruction_files:
+    - AGENTS.md
+    - CLAUDE.md

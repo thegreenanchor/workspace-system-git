@@ -1,0 +1,19 @@
+Notion API version check reminder
+
+Date to review: 2026-04-12
+Reason: Re-check the Notion API for a newer stable version and any migration notes that affect this workspace.
+
+Review these pages:
+- https://developers.notion.com/reference/changes-by-version
+- https://developers.notion.com/reference/versioning
+
+Current project state:
+- Runtime Notion-Version header: 2026-03-11
+- Notion data source ID: 708d2c3b-a131-40e2-99bc-219391feaf14
+- Submit path: create page under data_source_id, then append body blocks
+
+When reviewing:
+1. Confirm the latest supported Notion-Version.
+2. Check whether page creation or block append payloads changed.
+3. Verify database/data source semantics still match the code.
+4. Run a local compile and one controlled live submission test if an update is needed.

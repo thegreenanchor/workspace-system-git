@@ -1,0 +1,22 @@
+# Local runtime and secrets
+**/.env
+**/.env.*
+!**/.env.example
+ai_rules/cli_broker_runtime/
+ai_rules/gemini-home/
+ai_rules/temp/
+ai_rules/temp_payloads/
+ai_rules/session_log.db
+ai_rules/session_status.db
+ai_rules/broker_install_state.json
+ai_rules/codex_auto_submit_state.json
+
+# Common generated content
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/node_modules/
+raw-media-downloads/
+tmp/

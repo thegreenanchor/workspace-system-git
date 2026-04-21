@@ -1,0 +1,12 @@
+## CLI Ownership Policy
+- Use `Codex CLI` as the default implementation and integration hub.
+- Use `Gemini CLI` for research, Google-stack work, and content-focused specialist roles when the local broker maps the task there.
+- Use `Claude Code` for review, refactor, hardening, and presentation/deck specialist roles when the local broker maps the task there.
+- If the current project contains `AI_ROUTING.yaml`, treat it as the local source of truth for role-to-provider routing.
+- If no local `AI_ROUTING.yaml` exists, use `<workspace-root>\ai_rules\global_cli_policy.yaml` as the routing default.
+- Treat provider separation as intentional system architecture, not a convenience preference.
+- Do not suggest collapsing, consolidating, or bypassing provider roles for convenience unless the user explicitly asks to override the routing policy.
+- When asked which CLI should handle a task, answer from the routing source of truth and state whether the route came from `AI_ROUTING.yaml` or `global_cli_policy.yaml`.
+- If a task belongs to a non-local provider, enqueue it through `<workspace-root>\ai_rules\enqueue_cli_task.py` instead of manually opening another terminal.
+- For a blocking handoff, use the broker with `--wait` so the delegated CLI runs headlessly and returns the result to the current workflow.
+- Keep final repo-changing integration in `Codex CLI` unless the user explicitly overrides that policy.

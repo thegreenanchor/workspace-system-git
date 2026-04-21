@@ -1,0 +1,41 @@
+defaults:
+  provider: "codex"
+  task_categories:
+    implementation: "codex"
+    research: "gemini"
+    google-stack: "gemini"
+    content: "gemini"
+    analytics: "gemini"
+    review: "claude"
+    refactor: "claude"
+    presentation: "claude"
+
+providers:
+  codex:
+    executable: "<user-home>/AppData/Roaming/npm/codex.cmd"
+    assistant_name: "codex"
+    client_surface: "codex-cli"
+    prompt_flag: "-p"
+    extra_args: []
+
+  gemini:
+    executable: "<workspace-root>/ai_rules/gemini-broker.cmd"
+    assistant_name: "gemini"
+    client_surface: "gemini-cli"
+    prompt_flag: "-p"
+    prompt_via_stdin: true
+    extra_args:
+      - "--output-format"
+      - "text"
+
+  claude:
+    executable: "<user-home>/.local/bin/claude.exe"
+    assistant_name: "claude"
+    client_surface: "claude-code"
+    prompt_flag: "-p"
+    prompt_via_stdin: true
+    extra_args:
+      - "--output-format"
+      - "text"
+      - "--permission-mode"
+      - "bypassPermissions"

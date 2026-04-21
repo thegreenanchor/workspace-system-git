@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Rules Tooling</title>
+  <meta
+    name="description"
+    content="Companion page for AI Rules Tooling: local routing, managed instruction sync, brokered delegation, and session logging."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero" id="top">
+      <nav class="topbar">
+        <a class="brand" href="#top">
+          <span class="brand-mark">AR</span>
+          <span class="brand-copy">
+            <strong>AI Rules Tooling</strong>
+            <small>local orchestration layer</small>
+          </span>
+        </a>
+
+        <div class="topnav">
+          <a href="#why">Why it matters</a>
+          <a href="#system">System</a>
+          <a href="#routing">Routing</a>
+          <a href="#commands">Commands</a>
+        </div>
+      </nav>
+
+      <div class="hero-inner">
+        <p class="eyebrow">Blog companion and live system map</p>
+        <h1>Make multi-CLI AI work feel like one system instead of three terminals and a pile of memory.</h1>
+        <p class="lede">
+          This project separates provider ownership on purpose. Codex handles implementation and integration, Gemini handles research and Google-stack work,
+          Claude handles review and presentation-heavy output, and the broker plus logger keep the handoffs recoverable.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#why">Start with the takeaway</a>
+          <a class="button button-secondary" href="#commands">Copy the commands</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="why">
+        <div class="section-heading">
+          <p class="section-kicker">Why it matters</p>
+          <h2>The real problem is not prompting. It is operating AI work at repeatable scale.</h2>
+          <p>
+            Most setups fail in the same places: the wrong tool gets used, rules live only in memory, delegated work vanishes into side channels,
+            and nobody can reconstruct what happened later. This project exists to close those gaps with local routing, managed instruction files,
+            and a session log pipeline that survives normal work.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>Stop picking the model by feel</h3>
+            <p>The routing layer makes provider choice explicit. Codex owns implementation, Gemini owns research and Google-stack work, and Claude owns review and presentation output.</p>
+          </article>
+          <article class="card">
+            <h3>Stop trusting memory for rules</h3>
+            <p>Shared rule blocks are injected into instruction files per governed root, so naming, closeout, content structure, and CLI ownership are enforced where the work happens.</p>
+          </article>
+          <article class="card">
+            <h3>Stop losing the audit trail</h3>
+            <p>The session logger writes a durable record to Notion, Google Docs, local archive storage, and SQLite, which makes retries and historical review possible.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="system">
+        <div class="section-heading">
+          <p class="section-kicker">System map</p>
+          <h2>Four parts working together</h2>
+          <p>
+            The project combines a broker, a logger, managed instruction sync, and project-aware preflight. Each part is small on its own.
+            The value comes from keeping them connected.
+          </p>
+        </div>
+
+        <div class="grid-two">
+          <article class="panel">
+            <h3>Session logging</h3>
+            <p>Normalize payloads, submit to Notion and Google Docs, archive locally, and track state in SQLite.</p>
+          </article>
+          <article class="panel">
+            <h3>Brokered delegation</h3>
+            <p>Queue specialist work for Gemini or Claude when the task belongs on a different provider lane than the current terminal.</p>
+          </article>
+          <article class="panel">
+            <h3>Managed rule sync</h3>
+            <p>Load rule blocks from shared sources and upsert them into instruction files across governed roots.</p>
+          </article>
+          <article class="panel">
+            <h3>Project-aware preflight</h3>
+            <p>Resolve the active root, business context, and managed file coverage before work starts.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="routing">
+        <div class="section-heading">
+          <p class="section-kicker">Routing</p>
+          <h2>Three provider lanes, one ownership model</h2>
+          <p>
+            Global defaults live in <code>global_cli_policy.yaml</code>. If a project ships an <code>AI_ROUTING.yaml</code>, that local file becomes the source of truth.
+          </p>
+        </div>
+
+        <div class="grid-three">
+          <article class="provider-card codex">
+            <span class="provider-pill codex">Codex</span>
+            <h3>Implementation lane</h3>
+            <p>Default implementation and integration hub. Final repo-changing integration stays here unless intentionally overridden.</p>
+          </article>
+          <article class="provider-card gemini">
+            <span class="provider-pill gemini">Gemini</span>
+            <h3>Research lane</h3>
+            <p>Research, Google-stack work, analytics, and content-heavy specialist roles.</p>
+          </article>
+          <article class="provider-card claude">
+            <span class="provider-pill claude">Claude</span>
+            <h3>Review lane</h3>
+            <p>Review, refactor, hardening, and presentation-heavy output that benefits from a critique-first workflow.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="commands">
+        <div class="section-heading">
+          <p class="section-kicker">Commands</p>
+          <h2>The commands that matter</h2>
+          <p>Use this page as the blog add-on for the practical layer: the commands and files readers actually need.</p>
+        </div>
+
+        <div class="command-list">
+          <article class="command-card">
+            <h3>Submit one session</h3>
+            <pre><code>python submit_session.py --payload-file .\samples\example-session.json</code></pre>
+          </article>
+          <article class="command-card">
+            <h3>Broker a role-based task</h3>
+            <pre><code>python enqueue_cli_task.py --project-root "..\businesses\mna\projects\marketing_team" --role "social-media-specialist" --request "Build a 3-post LinkedIn campaign for MNA around nurse retention." --wait</code></pre>
+          </article>
+          <article class="command-card">
+            <h3>Auto-ingest Codex sessions</h3>
+            <pre><code>python auto_submit_codex_sessions.py --latest --dry-run
+python auto_submit_codex_sessions.py --all</code></pre>
+          </article>
+          <article class="command-card">
+            <h3>Sync and inspect rules</h3>
+            <pre><code>python preflight_rules.py --cwd "..\businesses\mna\projects\marketing_team"
+python sync_rules.py</code></pre>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

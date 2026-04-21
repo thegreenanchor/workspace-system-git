@@ -1,0 +1,47 @@
+project:
+  name: "mna-marketing-team"
+
+defaults:
+  provider: "codex"
+  task_categories:
+    implementation: "codex"
+    research: "gemini"
+    google-stack: "gemini"
+    content: "gemini"
+    analytics: "gemini"
+    review: "claude"
+    refactor: "claude"
+    presentation: "claude"
+
+roles:
+  content-strategist:
+    provider: "gemini"
+    prompt_file: ".claude/agents/content-strategist.md"
+
+  social-media-specialist:
+    provider: "gemini"
+    prompt_file: ".claude/agents/social-media-specialist.md"
+
+  data-analyst:
+    provider: "gemini"
+    prompt_file: ".claude/agents/data-analyst.md"
+
+  email-performance-analyst:
+    provider: "gemini"
+    prompt_file: ".claude/agents/email-performance-analyst.md"
+
+  social-reporting-analyst:
+    provider: "gemini"
+    prompt_file: ".claude/agents/social-reporting-analyst.md"
+
+  presentation-specialist:
+    provider: "claude"
+    prompt_file: ".claude/agents/presentation-specialist.md"
+
+  leadership-report-specialist:
+    provider: "claude"
+    prompt_file: ".claude/agents/leadership-report-specialist.md"
+
+  social-report-template-specialist:
+    provider: "claude"
+    prompt_file: ".claude/agents/social-report-template-specialist.md"

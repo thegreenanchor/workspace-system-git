@@ -1,0 +1,28 @@
+{
+  "session_id": "00000000-0000-4000-8000-000000000000",
+  "business": "personal",
+  "project_name": "replace-me",
+  "assistant_name": "chatgpt",
+  "client_surface": "chatgpt-project",
+  "session_type": "implementation",
+  "started_at": "2026-04-06T00:00:00Z",
+  "ended_at": "2026-04-06T00:30:00Z",
+  "status": "completed",
+  "submission_stage": "mobile-export",
+  "session_summary": "Replace with a concise summary of the session outcome.",
+  "work_completed": "Replace with the concrete work completed during the session.",
+  "deliverables": [
+    {
+      "title": "Deliverable title",
+      "deliverable_type": "other",
+      "local_path": "",
+      "google_drive_url": "",
+      "notion_url": "",
+      "status": "draft"
+    }
+  ],
+  "links": [],
+  "next_steps": "Replace with the next actions.",
+  "open_questions": "",
+  "full_transcript": "Replace with the full transcript."
+}

@@ -1,0 +1,58 @@
+roots:
+  - path: "<user-home>"
+    root_type: "global-home"
+    business: "personal"
+    manage_files:
+      - AGENTS.md
+      - CLAUDE.md
+      - GEMINI.md
+      - CHATGPT.md
+
+  - path: "<workspace-root>"
+    root_type: "workspace-root"
+    business: "personal"
+    manage_files:
+      - AGENTS.md
+
+  - path: "<workspace-root>/businesses/mna/projects/marketing_team"
+    root_type: "workspace"
+    business: "mna"
+    manage_files:
+      - AGENTS.md
+      - CLAUDE.md
+      - GEMINI.md
+
+  - path: "<workspace-root>/businesses/mna/projects/travel-mna"
+    root_type: "workspace"
+    business: "mna"
+    manage_files:
+      - AGENTS.md
+
+  - path: "<workspace-root>/businesses/tga/projects/marketing_team"
+    root_type: "workspace"
+    business: "tga"
+    manage_files:
+      - AGENTS.md
+      - GEMINI.md
+
+  - path: "<workspace-root>/businesses/tgah/projects/main"
+    root_type: "workspace"
+    business: "tgah"
+    manage_files:
+      - AGENTS.md
+      - CLAUDE.md
+      - GEMINI.md
+
+  - path: "<workspace-root>/businesses/tgah/projects/patch"
+    root_type: "workspace"
+    business: "tgah"
+    manage_files:
+      - AGENTS.md
+      - CLAUDE.md
+      - GEMINI.md
+
+  - path: "<workspace-root>/businesses/shl/projects/main"
+    root_type: "workspace"
+    business: "shl"
+    manage_files:
+      - CLAUDE.md

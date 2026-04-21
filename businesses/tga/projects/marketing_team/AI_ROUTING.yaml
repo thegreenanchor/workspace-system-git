@@ -1,0 +1,20 @@
+project:
+  name: "tga-marketing-team"
+
+defaults:
+  provider: "codex"
+  task_categories:
+    implementation: "codex"
+    research: "gemini"
+    google-stack: "gemini"
+    content: "gemini"
+    analytics: "gemini"
+    review: "claude"
+    refactor: "claude"
+    presentation: "claude"
+
+roles:
+  content-strategist: "gemini"
+  social-media-specialist: "gemini"
+  data-analyst: "gemini"
+  presentation-specialist: "claude"

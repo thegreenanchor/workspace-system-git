@@ -1,0 +1,14 @@
+project:
+  name: "tgah-main"
+
+defaults:
+  provider: "codex"
+  task_categories:
+    implementation: "codex"
+    research: "gemini"
+    google-stack: "gemini"
+    content: "gemini"
+    analytics: "gemini"
+    review: "claude"
+    refactor: "claude"
+    presentation: "claude"
